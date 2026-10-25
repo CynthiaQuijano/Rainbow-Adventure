@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>The Rainbow Returns</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Page Title -->
+   <h1 id="rainbowTitle">The Rainbow Returns 🌈</h1>
+    <!-- Rainbow Illustration -->
+   <img id="finalRainbow" src="Images/rainbow-restored.png"
+         alt="A beautiful rainbow shining over green hills"
+         class="story-image">
+
+    <!-- Illustration Credit -->
+    <p class="image-credit">
+        Illustration created by me using Adobe Illustrator.
+    </p>
+
+    <!-- Story Box 1 -->
+    <div class="story-box">
+        <p id="story1">
+            Rosie continued floating across the beautiful sky,
+            determined to find her missing rainbow colors.
+            Along the way, she remembered all the wonderful
+            places she had visited during her adventure.
+        </p>
+    </div>
+
+    <!-- Story Box 2 -->
+    <div class="story-box">
+       <p id="story2">
+            Suddenly, colorful sparkles began appearing
+            all around her. The colors slowly came together,
+            forming a beautiful rainbow that stretched
+            across the bright blue sky.
+        </p>
+    </div>
+
+    <!-- Story Box 3 -->
+    <div class="story-box">
+    <p id="story3">
+            Rosie smiled as her rainbow finally returned.
+            She realized that kindness, courage, and
+            believing in herself made her adventure special.
+            With her colors restored, Rosie happily
+            returned home.
+        </p>
+    </div>
+
+    <!-- Back to Home -->
+    <br>
+
+    <a href="index.html">
+        🏠 Back to Home
+    </a>
+
+
+    
+    <script>
+let helpedBenny = localStorage.getItem("helpedBenny");
+let helpedDolphin = localStorage.getItem("helpedDolphin");
+
+let finalRainbow = document.getElementById("finalRainbow");
+
+if (helpedBenny === "yes" && helpedDolphin === "yes") {
+    finalRainbow.src = "Images/rainbow-restored.png";
+}
+else if (helpedBenny === "yes") {
+    finalRainbow.src = "Images/rainbow-red.png";
+}
+else if (helpedDolphin === "yes") {
+    finalRainbow.src = "Images/rainbow-blue.png";
+}
+else {
+    finalRainbow.src = "Images/rainbow-adventure.jpg";
+}
+        let rainbowTitle = document.getElementById("rainbowTitle");
+
+if (helpedBenny !== "yes" && helpedDolphin !== "yes") {
+    rainbowTitle.textContent = "The Rainbow Remains Gray 🌈";
+}
+    
+// Change Rosie's story based on her choices
+
+let story1 = document.getElementById("story1");
+let story2 = document.getElementById("story2");
+let story3 = document.getElementById("story3");
+
+if (helpedBenny === "yes" && helpedDolphin === "yes") {
+
+    story1.textContent =
+        "Rosie remembered helping Benny the bunny and the lost dolphin. " +
+        "Her kindness had brought happiness to both of her new friends.";
+
+    story2.textContent =
+        "Suddenly, colorful sparkles filled the sky. " +
+        "All the rainbow colors returned, creating a beautiful rainbow.";
+
+    story3.textContent =
+        "Rosie smiled as her rainbow was finally restored. " +
+        "She learned that kindness and courage could make wonderful things happen. " +
+        "With her colors shining brightly, Rosie happily returned home.";
+
+} else if (helpedBenny === "yes") {
+
+    story1.textContent =
+        "Rosie remembered helping Benny the bunny find his family. " +
+        "She felt proud that she had made a difference.";
+
+    story2.textContent =
+        "Suddenly, a bright red light sparkled across the sky. " +
+        "The red color of Rosie's rainbow had returned!";
+
+    story3.textContent =
+        "Rosie smiled because her kindness had restored one rainbow color. " +
+        "She knew there were still more colors to find. " +
+        "With hope in her heart, Rosie continued her adventure.";
+
+} else if (helpedDolphin === "yes") {
+
+    story1.textContent =
+        "Rosie remembered helping the dolphin find his family. " +
+        "She felt happy knowing her kindness had helped someone.";
+
+    story2.textContent =
+        "Suddenly, a beautiful blue light shimmered across the ocean. " +
+        "The blue color of Rosie's rainbow had returned!";
+
+    story3.textContent =
+        "Rosie smiled as her blue rainbow color began to shine. " +
+        "She knew her adventure was not finished yet. " +
+        "Determined to find the remaining colors, Rosie continued searching.";
+
+} else {
+
+    story1.textContent =
+        "Rosie continued floating across the beautiful sky, " +
+        "still searching for her missing rainbow colors.";
+
+    story2.textContent =
+        "The rainbow remained gray because Rosie had not yet restored any colors. " +
+        "She wondered what she could do to bring them back.";
+
+    story3.textContent =
+        "Rosie realized that helping others might be the secret to restoring her rainbow. " +
+        "With new hope, she decided to continue her adventure.";
+}
+    
+    </script>
+</body>
+</html>

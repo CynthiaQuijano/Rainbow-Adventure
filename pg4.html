@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>The Power of Kindness</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Page Title -->
+    <h1>The Power of Kindness ❤️</h1>
+
+    <!-- Changing Rainbow Illustration -->
+<img id="rainbowImage"
+     src="Images/rainbow-red-blue.png"
+     alt="Rosie's magical rainbow"
+     class="story-image">
+
+<p class="image-credit">
+    Illustration created by me using Adobe Illustrator.
+</p>
+
+    <!-- Story Box 1 -->
+    <div class="story-box">
+        <p id="story1"></p>
+    </div>
+
+    <!-- Story Box 2 -->
+    <div class="story-box">
+        <p id="story2"></p>
+    </div>
+
+    <!-- Story Box 3 -->
+    <div class="story-box">
+        <p id="story3"></p>
+    </div>
+
+   <!-- Adventure Choices -->
+
+<div>
+    <a id="continueButton" href="pg5.html">
+        🌈 Continue the Adventure
+    </a>
+</div>
+
+    <br>
+
+    <div>
+        <a href="index.html">
+            🏠 Back to Home
+        </a>
+    </div>
+
+    <!-- Interactive Story -->
+    <script>
+
+        const params = new URLSearchParams(window.location.search);
+
+        const animal = params.get("animal");
+
+        if (animal === "benny") {
+
+            document.getElementById("story1").textContent =
+                "Rosie decided to help Benny find his family. " +
+                "Together, they traveled through the magical forest, " +
+                "searching beneath the tall trees and colorful flowers.";
+
+            document.getElementById("story2").textContent =
+                "Suddenly, Benny spotted his family waiting near " +
+                "a beautiful meadow. He jumped with happiness " +
+                "and thanked Rosie for helping him find his way home.";
+
+            document.getElementById("story3").textContent =
+                "As Rosie watched Benny reunite with his family, " +
+                "a bright red light appeared in the sky. " +
+                "One of her missing rainbow colors had returned! " +
+                "Rosie discovered that kindness could bring back her colors.";
+
+        } else if (animal === "dolphin") {
+
+            document.getElementById("story1").textContent =
+                "Rosie decided to help the lost dolphin find his family. " +
+                "Together, they traveled across the sparkling ocean, " +
+                "searching through the beautiful coral reefs.";
+
+            document.getElementById("story2").textContent =
+                "After swimming for a while, the dolphin heard " +
+                "familiar sounds in the distance. His family appeared " +
+                "through the blue water, and he rushed toward them happily.";
+
+            document.getElementById("story3").textContent =
+                "The dolphin thanked Rosie for her kindness. " +
+                "Suddenly, a beautiful blue light sparkled across the ocean. " +
+                "Another rainbow color had returned! " +
+                "Rosie realized that helping others was restoring her colors.";
+
+        } else {
+
+            document.getElementById("story1").textContent =
+                "Rosie discovered that helping others was an important part of her adventure.";
+
+            document.getElementById("story2").textContent =
+                "Every act of kindness brought happiness to the world around her.";
+
+            document.getElementById("story3").textContent =
+                "With new hope, Rosie continued searching for her missing rainbow colors.";
+        }
+
+    </script>
+<script>
+    let helpedBenny = localStorage.getItem("helpedBenny");
+    let helpedDolphin = localStorage.getItem("helpedDolphin");
+
+    let rainbowImage = document.getElementById("rainbowImage");
+
+    if (helpedBenny === "yes" && helpedDolphin === "yes") {
+        rainbowImage.src = "Images/rainbow-red-blue.png";
+    }
+    else if (helpedBenny === "yes") {
+        rainbowImage.src = "Images/rainbow-red.png";
+    }
+    else if (helpedDolphin === "yes") {
+        rainbowImage.src = "Images/rainbow-blue.png";
+    }
+    else {
+        rainbowImage.src = "Images/kindness-rainbow.png";
+    }
+    let continueButton = document.getElementById("continueButton");
+
+if (helpedBenny === "yes" && helpedDolphin === "yes") {
+    continueButton.href = "pg5.html";
+    continueButton.textContent = "🌈 See the Restored Rainbow";
+}
+else if (helpedBenny === "yes") {
+    continueButton.href = "pg3.html";
+    continueButton.textContent = "🌊 Visit The Sparkling Ocean";
+}
+else if (helpedDolphin === "yes") {
+    continueButton.href = "pg2.html";
+    continueButton.textContent = "🌳 Help Benny";
+}
+else {
+    continueButton.href = "index.html";
+    continueButton.textContent = "🏠 Return to Choose an Adventure";
+}
+</script>
+</body>
+</html>
